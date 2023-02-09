@@ -91,14 +91,21 @@ body {
   width: 90%;
   border-radius: 10px;
   overflow: hidden;
+  display: grid;
 }
-.card .image-container img {
+.card .image-container .image-mobile {
   width: 100%;
   height: 100%;
   max-width: 100%;
 }
+.card .image-container .image-desktop {
+  display: none;
+}
 .card .product-section {
   padding: 1.3rem 1.6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .card .product-section .lead-text {
   letter-spacing: 0.2rem;
@@ -142,11 +149,38 @@ body {
 .card .product-section button img {
   display: inline-block;
 }
+.card .product-section button:hover {
+  background-color: #1c3b30;
+}
 
 small {
   color: hsl(228deg, 12%, 48%);
 }
 
+@media only screen and (min-width: 1024px) {
+  .card {
+    grid-template-columns: 1fr 1fr;
+    max-width: 40%;
+  }
+  .card .image-container {
+    grid-row: 1;
+  }
+  .card .image-container .image-mobile {
+    display: none;
+  }
+  .card .image-container .image-desktop {
+    display: block;
+  }
+  .card .product-section {
+    padding: 1.3rem 2rem;
+  }
+  .card .product-section .description-text {
+    padding: 1rem 0;
+  }
+  .card .product-section button {
+    padding-top: 1rem;
+  }
+}
 .attribution {
   font-size: 11px;
   text-align: center;

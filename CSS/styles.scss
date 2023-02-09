@@ -25,15 +25,22 @@ body {
     width: 90%;
     border-radius: 10px;
     overflow: hidden;
+    display: grid;
     .image-container {
-        img {
+        .image-mobile {
             width: 100%;
             height: 100%;
             max-width: 100%;
         }
+        .image-desktop {
+            display: none;
+        }
     }
     .product-section {
         padding: 1.3rem 1.6rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         .lead-text {
             letter-spacing: 0.2rem;
             font-size: 0.75rem;
@@ -76,11 +83,39 @@ body {
                 display: inline-block;
             }
         }
+        button:hover {
+            background-color:adjust-color($color: $Dark_cyan, $hue: 0, $saturation: 0%, $lightness: -20%, $alpha: 1.0)
+        }
     }
 }
 
 small {
     color: $Dark_grayish_blue;
+}
+
+@media only screen and (min-width: 1024px) {
+    .card {
+        grid-template-columns: 1fr 1fr;
+        max-width: 40%;
+        .image-container {
+            grid-row: 1;
+            .image-mobile {
+                display: none;
+            }
+            .image-desktop {
+                display: block;
+            }
+        }
+        .product-section {
+            padding: 1.3rem 2rem;
+            .description-text {
+                padding: 1rem 0;
+            }
+            button {
+                padding-top: 1rem;
+            }
+        }
+    }
 }
 
 .attribution {
