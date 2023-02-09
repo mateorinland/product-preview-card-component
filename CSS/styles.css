@@ -1,0 +1,156 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  -webkit-text-decoration-skip: ink;
+          text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+html {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+}
+
+body {
+  font-size: 14px;
+  background-color: hsl(30deg, 38%, 92%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  background-color: hsl(0deg, 0%, 100%);
+  width: 90%;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.card .image-container img {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+}
+.card .product-section {
+  padding: 1.3rem 1.6rem;
+}
+.card .product-section .lead-text {
+  letter-spacing: 0.2rem;
+  font-size: 0.75rem;
+}
+.card .product-section h1 {
+  font-family: "Fraunces", serif;
+  font-size: 2rem;
+  line-height: 95%;
+  padding: 1rem 0;
+}
+.card .product-section .description-text {
+  font-size: 0.85rem;
+  display: block;
+  line-height: 150%;
+}
+.card .product-section .prices {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+.card .product-section .current-price {
+  font-family: "Fraunces", serif;
+  color: hsl(158deg, 36%, 37%);
+  font-size: 2rem;
+}
+.card .product-section .previous-price {
+  font-size: 0.9rem;
+  text-decoration: line-through;
+}
+.card .product-section button {
+  width: 100%;
+  padding: 0.8rem;
+  border-radius: 10px;
+  color: hsl(0deg, 0%, 100%);
+  background-color: hsl(158deg, 36%, 37%);
+  border-style: none;
+  font-weight: 700;
+}
+.card .product-section button img {
+  display: inline-block;
+}
+
+small {
+  color: hsl(228deg, 12%, 48%);
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228deg, 45%, 44%);
+}/*# sourceMappingURL=styles.css.map */
