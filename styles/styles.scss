@@ -1,0 +1,153 @@
+@import "_reset";
+
+$Dark_cyan: hsl(158, 36%, 37%);
+$Cream: hsl(30, 38%, 92%);
+$Very_dark_blue: hsl(212, 21%, 14%);
+$Dark_grayish_blue: hsl(228, 12%, 48%);
+$White: hsl(0, 0%, 100%);
+
+body {
+  font-size: 0.875rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  background-color: $Cream;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem 1rem;
+}
+
+@media screen and (min-width: 62.5rem) {
+  body {
+    padding: 5rem;
+    justify-content: center;
+  }
+}
+
+.product-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.card {
+  background-color: $White;
+  border-radius: 0.714rem;
+  overflow: hidden;
+  max-width: 37.5rem;
+}
+
+@media screen and (min-width: 41.25rem) {
+  .card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.info-container {
+  padding: 1.3rem 1.6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media screen and (min-width: 62.5rem) {
+  .info-container {
+    padding: 1.3rem 2rem;
+  }
+}
+
+.lead-text {
+  letter-spacing: 0.3rem;
+  font-size: 0.75rem;
+  color: $Dark_grayish_blue;
+}
+
+.title {
+  font-family: "Fraunces", serif;
+  font-size: 2rem;
+  line-height: 95%;
+  padding: 1rem 0;
+}
+
+.description-text {
+  font-size: 0.85rem;
+  display: block;
+  line-height: 150%;
+  color: $Dark_grayish_blue;
+}
+
+@media screen and (min-width: 62.5rem) {
+  .description-text {
+    padding: 1rem 0;
+  }
+}
+
+.prices {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
+.current-price {
+  font-family: "Fraunces", serif;
+  color: $Dark_cyan;
+  font-size: 2rem;
+}
+
+.previous-price {
+  font-size: 0.9rem;
+  text-decoration: line-through;
+  color: $Dark_grayish_blue;
+}
+
+.add-to-cart-button {
+  width: 100%;
+  padding: 0.8rem;
+  border-radius: 0.714rem;
+  color: $White;
+  background-color: $Dark_cyan;
+  border-style: none;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.add-to-cart-button:hover {
+  background-color: adjust-color(
+    $color: $Dark_cyan,
+    $hue: 0,
+    $saturation: 0%,
+    $lightness: -20%,
+    $alpha: 1
+  );
+}
+
+@media screen and (min-width: 62.5rem) {
+  .add-to-cart-button {
+    padding-top: 1rem;
+  }
+}
+
+.attribution {
+  font-size: 0.786rem;
+  text-align: center;
+}
+
+.attribution-link {
+  color: hsl(228, 45%, 44%);
+}
+
+@media screen and (min-width: 36em) and (min-height: 36.25em) {
+  .attribution {
+    position: fixed;
+    bottom: 0.3rem;
+    width: 100%;
+  }
+}

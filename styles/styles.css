@@ -1,3 +1,8 @@
+/*---------------------------
+ ** CSS Reset
+-----------------------------*/
+/* See https://piccalil.li/blog/a-modern-css-reset/
+
 /* Box sizing rules */
 *,
 *::before,
@@ -33,8 +38,8 @@ html:focus-within {
 /* Set core body defaults */
 body {
   min-height: 100vh;
-  text-rendering: optimizeSpeed;
   line-height: 1.5;
+  text-rendering: optimizeSpeed;
 }
 
 /* A elements that don't have a class get default styles */
@@ -46,8 +51,8 @@ a:not([class]) {
 /* Make images easier to work with */
 img,
 picture {
-  max-width: 100%;
   display: block;
+  max-width: 100%;
 }
 
 /* Inherit fonts for inputs and buttons */
@@ -66,125 +71,144 @@ select {
   *,
   *::before,
   *::after {
+    transition-duration: 0.01ms !important;
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
 }
-html {
+body {
+  font-size: 0.875rem;
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
-}
-
-body {
-  font-size: 14px;
-  background-color: hsl(30deg, 38%, 92%);
+  background-color: hsl(30, 38%, 92%);
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  gap: 2rem;
+  padding: 2rem 1rem;
+}
+
+@media screen and (min-width: 62.5rem) {
+  body {
+    padding: 5rem;
+    justify-content: center;
+  }
+}
+.product-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .card {
-  background-color: hsl(0deg, 0%, 100%);
-  width: 90%;
-  border-radius: 10px;
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 0.714rem;
   overflow: hidden;
-  display: grid;
+  max-width: 37.5rem;
 }
-.card .image-container .image-mobile {
-  width: 100%;
-  height: 100%;
-  max-width: 100%;
+
+@media screen and (min-width: 41.25rem) {
+  .card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
 }
-.card .image-container .image-desktop {
-  display: none;
-}
-.card .product-section {
+.info-container {
   padding: 1.3rem 1.6rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
-.card .product-section .lead-text {
-  letter-spacing: 0.2rem;
-  font-size: 0.75rem;
+
+@media screen and (min-width: 62.5rem) {
+  .info-container {
+    padding: 1.3rem 2rem;
+  }
 }
-.card .product-section h1 {
+.lead-text {
+  letter-spacing: 0.3rem;
+  font-size: 0.75rem;
+  color: hsl(228, 12%, 48%);
+}
+
+.title {
   font-family: "Fraunces", serif;
   font-size: 2rem;
   line-height: 95%;
   padding: 1rem 0;
 }
-.card .product-section .description-text {
+
+.description-text {
   font-size: 0.85rem;
   display: block;
   line-height: 150%;
+  color: hsl(228, 12%, 48%);
 }
-.card .product-section .prices {
+
+@media screen and (min-width: 62.5rem) {
+  .description-text {
+    padding: 1rem 0;
+  }
+}
+.prices {
   display: flex;
   align-items: center;
   gap: 1rem;
   padding: 1rem 0;
 }
-.card .product-section .current-price {
+
+.current-price {
   font-family: "Fraunces", serif;
-  color: hsl(158deg, 36%, 37%);
+  color: hsl(158, 36%, 37%);
   font-size: 2rem;
 }
-.card .product-section .previous-price {
+
+.previous-price {
   font-size: 0.9rem;
   text-decoration: line-through;
+  color: hsl(228, 12%, 48%);
 }
-.card .product-section button {
+
+.add-to-cart-button {
   width: 100%;
   padding: 0.8rem;
-  border-radius: 10px;
-  color: hsl(0deg, 0%, 100%);
-  background-color: hsl(158deg, 36%, 37%);
+  border-radius: 0.714rem;
+  color: hsl(0, 0%, 100%);
+  background-color: hsl(158, 36%, 37%);
   border-style: none;
   font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
 }
-.card .product-section button img {
-  display: inline-block;
-}
-.card .product-section button:hover {
+
+.add-to-cart-button:hover {
   background-color: #1c3b30;
 }
 
-small {
-  color: hsl(228deg, 12%, 48%);
-}
-
-@media only screen and (min-width: 1024px) {
-  .card {
-    grid-template-columns: 1fr 1fr;
-    max-width: 40%;
-  }
-  .card .image-container {
-    grid-row: 1;
-  }
-  .card .image-container .image-mobile {
-    display: none;
-  }
-  .card .image-container .image-desktop {
-    display: block;
-  }
-  .card .product-section {
-    padding: 1.3rem 2rem;
-  }
-  .card .product-section .description-text {
-    padding: 1rem 0;
-  }
-  .card .product-section button {
+@media screen and (min-width: 62.5rem) {
+  .add-to-cart-button {
     padding-top: 1rem;
   }
 }
 .attribution {
-  font-size: 11px;
+  font-size: 0.786rem;
   text-align: center;
 }
-.attribution a {
-  color: hsl(228deg, 45%, 44%);
+
+.attribution-link {
+  color: hsl(228, 45%, 44%);
+}
+
+@media screen and (min-width: 36em) and (min-height: 36.25em) {
+  .attribution {
+    position: fixed;
+    bottom: 0.3rem;
+    width: 100%;
+  }
 }/*# sourceMappingURL=styles.css.map */
