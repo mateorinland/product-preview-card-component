@@ -1,7 +1,7 @@
 # Product preview card component
 My solution for Frontend Mentor's product preview card component challenge.
 
-Using HTML5, CSS3 and SASS.
+Using HTML5, CSS3 + SASS.
 * Semantic markup.
 * Audited by Lighthouse and Accessibility Insights.
 * Flexbox and grid.
